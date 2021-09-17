@@ -148,7 +148,7 @@ if ($status == false) {
       <input type="file" name="upfile" accept="image/*" capture="camera">
       <div>
         <div class="w-100 text-center mt-5">
-          <button class="btn btn-primary type="submit">確認</button>
+          <button class="btn btn-primary" type="submit">確認</button>
         </div>
       </div>
     </form>
