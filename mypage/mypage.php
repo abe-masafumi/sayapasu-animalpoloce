@@ -163,39 +163,14 @@ if ($status == false) {
 
 <div class="container-fluid">
   <div class="row">
+  <?php foreach ($image_data as $record): ?>
     <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
+      <img src=<?= $record['image'] ?> alt="まだ" class="img-fluid" >
     </div>
-    <div class="col-3 p-0">
+  <?php endforeach ?>
+    <!-- <div class="col-3 p-0">
       <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
-    <div class="col-3 p-0">
-      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-    </div>
+    </div> -->
   </div>
 </div>
 
