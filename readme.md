@@ -30,3 +30,6 @@ class="container bg-primary d-flex align-items-center"
 
 # font
 > https://getbootstrap.jp/docs/5.0/utilities/text/
+
+# size
+> https://getbootstrap.jp/docs/4.1/utilities/sizing/
