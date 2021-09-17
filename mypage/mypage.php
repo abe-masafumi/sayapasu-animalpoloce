@@ -78,15 +78,15 @@ if ($status == false) {
 } else {
   $pets_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  $output = "";
-  foreach ($pets_data as $record) {
-    $output .= "<tr>";
-    $output .= "<td>{$record["p_name"]}</td>";
-    $output .= "<td>
-    <a href='../pet/pet.php?p_id={$record["p_id"]}'><img src='{$record["p_image"]}' width='100' height='100'></a>
-                </td>";
-    $output .= "</tr>";
-  }
+  // $output = "";
+  // foreach ($pets_data as $record) {
+  //   $output .= "<tr>";
+  //   $output .= "<td>{$record["p_name"]}</td>";
+  //   $output .= "<td>
+  //   <a href='../pet/pet.php?p_id={$record["p_id"]}'><img src='{$record["p_image"]}' width='100' height='100'></a>
+  //               </td>";
+  //   $output .= "</tr>";
+  // }
   unset($value);
 }
 
@@ -102,12 +102,12 @@ if ($status == false) {
   exit();
 } else {
     $image_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $past = "";
-    foreach ($image_data as $record) {
-        $past .= "<tr>";
-        $past .= "<td><a href='../pet/pet_detail.php?i_id={$record['i_id']}'><img src='{$record['image']}' height='100px' alt=''></a></td>";
-        $past .= "</tr>";
-    }
+    // $past = "";
+    // foreach ($image_data as $record) {
+    //     $past .= "<tr>";
+    //     $past .= "<td><a href='../pet/pet_detail.php?i_id={$record['i_id']}'><img src='{$record['image']}' height='100px' alt=''></a></td>";
+    //     $past .= "</tr>";
+    // }
 }
 
 
@@ -132,7 +132,7 @@ if ($status == false) {
 <header class="container-fluid bg-primary d-flex align-items-center justify-content-betwee " >
   <div class="row h-85">
     <div class="col-2 p-0">
-      <img src="../taion.png" alt="ハンバーガーメニュー" class="img-fluid ">
+      <img src="../oniku.png" alt="ハンバーガーメニュー" class="img-fluid ">
     </div>
     <div class="col-8"></div>
     <div class="col-2 p-0 position-relative">
