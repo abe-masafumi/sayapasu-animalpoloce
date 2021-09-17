@@ -50,57 +50,73 @@ if ($status == false) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ペット個別情報</title>
+   <!-- bootstrap icon CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 
 <link rel="stylesheet" type="text/css" href="../style.css">
 
 <body>
 
-  <main></main>
-
-  <img src="<?= $pet_data['p_image'] ?>" alt="" height="80" width="80">
-
-  <table>
-    <tbody>
-      <tr>
-        <td>名前</td>
-        <td>:</td>
-        <td><?= $pet_data['p_name'] ?></td>
-      </tr>
-      <tr>
-        <td>生年月日</td>
-        <td>:</td>
-        <td><?= $pet_data['birthday'] ?></td>
-      </tr>
-      <tr>
-        <td>性別</td>
-        <td>:</td>
-        <td><?= $pet_data['sex'] ?></td>
-      </tr>
-      <tr>
-        <td>種類</td>
-        <td>:</td>
-        <td><?= $pet_data['type'] ?></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <form action="pet_edit.php" method="POST">
-    <input type="hidden" name="p_id" value="<?= $pet_data['p_id'] ?>">
-    <button type="submit">編集</button>
-    <a href="pet_up.php?p_id=<?= $p_id ?>">投稿</a>
-
-
-  </form>
-
-  <p>↓過去写真一覧を並べる↓</p>
-  <table>
-    <tbody><?= $output ?></tbody>
-  </table>
-  <div>
-    <a href="../mypage/mypage.php">マイページへ</a>
+  <main class="m-auto" style="width: 80%">
+    <div class="text-center">
+      <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src="<?= $pet_data['p_image'] ?>" alt="" height="80" width="80">
+    </div>
+    <div class="d-flex">
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <td>名前</td>
+              <td>:</td>
+              <td><?= $pet_data['p_name'] ?></td>
+            </tr>
+            <tr>
+              <td>生年月日</td>
+              <td>:</td>
+              <td><?= $pet_data['birthday'] ?></td>
+            </tr>
+            <tr>
+              <td>性別</td>
+              <td>:</td>
+              <td><?= $pet_data['sex'] ?></td>
+            </tr>
+            <tr>
+              <td>種類</td>
+              <td>:</td>
+              <td><?= $pet_data['type'] ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <form action="pet_edit.php" method="POST">
+          <div><a href="pet_up.php?p_id=<?= $p_id ?>">投稿</a></div>
+          <input type="hidden" name="p_id" value="<?= $pet_data['p_id'] ?>">
+          <button class="btn btn-primary" type="submit">編集</button>
+        </form>
+      </div>
+    </div>
+<!-- <a href='pet_detail.php?i_id={$record['i_id']}'><img src='{$record['image']}' height='100px' alt=''> -->
+    <!-- <p>↓過去写真一覧を並べる↓</p> -->
+<div class="container-fluid">
+  <div class="row">
+  <?php foreach ($image_data as $record): ?>
+    <div class="col-3 p-0">
+      <a href="pet_detail.php?i_id=<?= $record['i_id'] ?>">
+      <img class="img-fluid" style="width: 80px; height:80px" src=<?= $record['image'] ?> alt="まだ">
+      </a>
+    </div>
+  <?php endforeach ?>
+    <!-- <div class="col-3 p-0">
+      <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
+    </div> -->
   </div>
-
+</div>
+    <!-- <div>
+      <a href="../mypage/mypage.php">マイページへ</a>
+    </div> -->
+  </main>
   <footer></footer>
 </body>
 

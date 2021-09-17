@@ -3,7 +3,6 @@ include("../functions.php");
 $pdo = connect_to_db();
 session_start();
 
-
 if ($_SESSION["session_id"] != session_id()) {
   $u_name = $_POST['u_name'];
   $email = $_POST['email'];
@@ -151,13 +150,14 @@ if ($_SESSION["session_id"] != session_id()) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>編集内容確認</title>
+    <!-- boootstrapのパッケージ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
 
-  <main></main>
-
-  <table>
+  <main class="m-auto" style="width: 80%;">
+  <table class="rounded" style="background: pink; border-radius: 8px">
     <tbody>
       <h2>お客様情報</h2>
       <tr>
@@ -182,9 +182,9 @@ if ($_SESSION["session_id"] != session_id()) {
       </tr>
     </tbody>
   </table>
-  <table>
+  <h2>ペット情報</h2>
+  <table  class="rounded" style="background: pink; border-radius: 8px">
     <tbody>
-      <h2>ペット情報</h2>
       <tr>
         <td>購入店舗</td>
         <td>:</td>
@@ -213,35 +213,34 @@ if ($_SESSION["session_id"] != session_id()) {
       <tr>
         <td>写真</td>
         <td>:</td>
-        <td> <img src="<?= $filename_to_save ?>" alt="" height="160px"></td>
+        <td> <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src="<?= $filename_to_save ?>" alt="" height="160px"></td>
       </tr>
     </tbody>
   </table>
 
-  <div>
-    <p><?= $store_data['store_name'] ?>様が<br>承認ボタンを押して下さい</p>
+  <div class="text-center">
+    <div>
+      <p class="m-0"><?= $store_data['store_name'] ?>様が<br>承認ボタンを押して下さい</p>
+    </div>
+    <form action="user_create.php" method="POST">
+      <input type="hidden" name="u_name" value="<?= $u_name ?>">
+      <input type="hidden" name="email" value="<?= $email ?>">
+      <input type="hidden" name="password" value="<?= $password ?>">
+      <input type="hidden" name="address" value="<?= $address ?>">
+      <input type="hidden" name="phone" value="<?= $phone ?>">
+      <input type="hidden" name="s_id" value="<?= $s_id ?>">
+      <input type="hidden" name="p_name" value="<?= $p_name ?>">
+      <input type="hidden" name="birthday" value="<?= $birthday ?>">
+      <input type="hidden" name="sex" value="<?= $sex ?>">
+      <input type="hidden" name="type" value="<?= $type ?>">
+      <input type="hidden" name="p_image" value="<?= $filename_to_save ?>">
+      <button class="btn btn-primary" type="submit">承認します</button>
+    </form>
+    
   </div>
-
-
-  <form action="user_create.php" method="POST">
-
-    <input type="hidden" name="u_name" value="<?= $u_name ?>">
-    <input type="hidden" name="email" value="<?= $email ?>">
-    <input type="hidden" name="password" value="<?= $password ?>">
-    <input type="hidden" name="address" value="<?= $address ?>">
-    <input type="hidden" name="phone" value="<?= $phone ?>">
-
-    <input type="hidden" name="s_id" value="<?= $s_id ?>">
-    <input type="hidden" name="p_name" value="<?= $p_name ?>">
-    <input type="hidden" name="birthday" value="<?= $birthday ?>">
-    <input type="hidden" name="sex" value="<?= $sex ?>">
-    <input type="hidden" name="type" value="<?= $type ?>">
-    <input type="hidden" name="p_image" value="<?= $filename_to_save ?>">
-
-    <button type="submit">承認します</button>
-  </form>
   <!-- POSTでデータ持って帰って前に戻るボタンを作る -->
-
+  </main>
+ 
   <footer></footer>
 
 </body>
