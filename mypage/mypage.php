@@ -148,21 +148,16 @@ if ($status == false) {
   <!--　マイペット一覧　output -->
 <div class="container-fluid">
   <div class="row justify-content-center text-center"> 
+    <?php foreach ($pets_data as $record): ?>
     <div class="col-4 my-2">
-      <img class="rounded-circle" src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" width="70px" >
+      <img class="rounded-circle" src=<?= $record["p_image"] ?> alt="まだ" width="70px" >
     </div>
-    <div class="col-4 my-2">
+    <?php endforeach ?>
+    
+    <!-- <div class="col-4 my-2">
       <img class="rounded-circle" src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" width="70px" >
-    </div>
-    <div class="col-4 my-2">
-      <img class="rounded-circle" src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" width="70px" >
-    </div>
-    <div class="col-4 my-2">
-      <img class="rounded-circle" src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" width="70px" >
-    </div>
-    <div class="col-4 my-2">
-      <img class="rounded-circle" src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" width="70px" >
-    </div>
+    </div> -->
+   
   </div>
 </div>
 
