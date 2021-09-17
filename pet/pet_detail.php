@@ -30,27 +30,29 @@ if ($status == false) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>過去の写真</title>
   <link rel="stylesheet" type="text/css" href="../style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
 
-<main></main>
+<main class="m-auto" style="width: 80%;">
+  <div class="text-center">
+    <img src="<?= $image_data['image'] ?>" alt="" width="200" height="200">
+  <p>投稿日:<?= $image_data['created_at'] ?></p>
 
-<img src="<?= $image_data['image'] ?>" alt="" width="100" height="100">
-<div>
-  <p>相談内容</p>
-  <p><?= $image_data['request'] ?></p>
-</div>
-<div>
-  <p>お返事</p>
-<p><?= $image_data['response'] ?></p>
-</div>
-<div>
-<p>投稿日</p>
-<p><?= $image_data['created_at'] ?></p>
-</div>
-
-<a href="pet.php?p_id=<?= $image_data['p_id'] ?>">戻る</a>
-
+  </div>
+  <div>
+    <p>相談内容</p>
+    <p><?= $image_data['request'] ?></p>
+  </div>
+  <div>
+    <p>お返事</p>
+  <p><?= $image_data['response'] ?></p>
+  </div>
+  <div>
+ 
+  </div>
+  <a href="pet.php?p_id=<?= $image_data['p_id'] ?>">戻る</a>
+</main>
 <footer></footer>
 
 </body>

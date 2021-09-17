@@ -97,13 +97,15 @@ if ($status == false) {
         </form>
       </div>
     </div>
-
+<!-- <a href='pet_detail.php?i_id={$record['i_id']}'><img src='{$record['image']}' height='100px' alt=''> -->
     <!-- <p>↓過去写真一覧を並べる↓</p> -->
 <div class="container-fluid">
   <div class="row">
   <?php foreach ($image_data as $record): ?>
     <div class="col-3 p-0">
+      <a href="pet_detail.php?i_id=<?= $record['i_id'] ?>">
       <img class="img-fluid" style="width: 80px; height:80px" src=<?= $record['image'] ?> alt="まだ">
+      </a>
     </div>
   <?php endforeach ?>
     <!-- <div class="col-3 p-0">
