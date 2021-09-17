@@ -128,30 +128,33 @@ if ($status == false) {
 </head>
 
 <body>
-<!-- ヘッダー -->
-<header class="container-fluid bg-primary d-flex align-items-center justify-content-betwee " >
-  <div class="row h-85">
-    <div class="col-2 p-0">
-      <img src="../oniku.png" alt="ハンバーガーメニュー" class="img-fluid ">
+<div style="height: 80px;">
+  <header class="container-fluid bg-primary d-flex align-items-center justify-content-betwee fixed-top">
+    <div class="row h-85">
+      <div class="col-2 p-0">
+        <img src="../oniku.png" alt="ハンバーガーメニュー" class="img-fluid ">
+      </div>
+      <div class="col-8 d-flex d-flex align-items-center">今週の写真がありませーん</div>
+      <div class="col-2 p-0">
+        <img src="../taion.png" alt="ハンバーガーメニュー" class="img-fluid">
+      </div>
     </div>
-    <div class="col-8"></div>
-    <div class="col-2 p-0 position-relative">
-      <img src="../taion.png" alt="ハンバーガーメニュー" class="img-fluid">
-    </div>
-  </div> 
-</header>
+  </header>
+</div>
 <!-- ヘッダーend -->
+
 <!-- メイン -->
   <main>
   <!-- <p><?= $user_data['u_name'] ?>さん！こんにちは</p> -->
   <!--　マイペット一覧　output -->
 <div class="container-fluid">
-  <div class="row justify-content-center text-center"> 
+  <div class="row justify-content-center text-center my-2"> 
     <?php foreach ($pets_data as $record): ?>
     <div class="col-4 my-2">
         <a href="../pet/pet.php?p_id=<?= $record["p_id"] ?>">
         <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src=<?= $record["p_image"] ?> alt="まだ">
-        </a>
+      </a>
+        <p class="m-0"><?= $record["p_name"] ?></p>
     </div>
     <?php endforeach ?>
     
@@ -166,7 +169,7 @@ if ($status == false) {
   <div class="row">
   <?php foreach ($image_data as $record): ?>
     <div class="col-3 p-0">
-      <img class="img-fluid" style="width: 100px; height:100px" src=<?= $record['image'] ?> alt="まだ">
+      <img class="img-fluid" style="width: 100px; height:100px" src=<?= $record['image'] ?>>
     </div>
   <?php endforeach ?>
     <!-- <div class="col-3 p-0">
@@ -213,8 +216,10 @@ if ($status == false) {
     <a href="../other/logout.php">ログアウト</a>
   </div> -->
   </main>
+  <!-- ヘッダー -->
+
  
-  <footer class="container-fluid text-center fixed-bottom">
+  <footer class="container-fluid text-center fixed-bottom bg-white">
     <div class="row bg-primary">
       <div class="d-flex justify-content-between">
         <p class="m-0">利用規約</p>
