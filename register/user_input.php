@@ -120,7 +120,9 @@
         <input class="w-100" type="text" name="password">
       </div>
 
-      <div class="w-100 text-center mt-5"><button class="btn btn-primary " type="submit">ペット情報入力へ</button></div>
+      <div class="w-100 text-center mt-5">
+        <button class="btn btn-primary " type="submit">ペット情報入力へ</button>
+      </div>
     </form>
   </div>
 
