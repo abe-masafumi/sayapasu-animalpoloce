@@ -1,19 +1,20 @@
-html{
+/* html{
   height: 850px;
   width: 425px;
   font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
-}
+} */
 
-main{
+/* main{
   width: 100%;
   height: 190px; 
   text-align: center;
   background-size: cover;
   background-image: url(トップ.png);
-  position: absolute;/*←絶対位置*/
-  top: 0; /*下に固定*/
-}
+  position: absolute;
+  top: 0; 
+} */
 
+/* 
 body{
   max-width: 425px;
   height: 580px;
@@ -21,20 +22,20 @@ body{
   text-align: center;
   line-height: 30px;
   margin-top: 200px;
-}
+} */
 
-table {
+/* table {
   margin: 20px auto;
   border-spacing: 10px;
-}
+} */
 
-button {
+/* button {
   color: #fff;
   background: #f56500;
   border-radius: 100vh;
-}
+} */
 
-a {
+/* a {
   display:block;
   margin: 20px auto;
   text-decoration: none;
@@ -44,12 +45,12 @@ a {
   border-radius: 4px;
   width: 160px;
   border-spacing: 7px;
-}
+} */
 
- a:hover {
+ /* a:hover {
   background: silver;
   text-decoration: none;
-}
+} */
 
 /* footer {
   width: 100%;
@@ -61,12 +62,12 @@ a {
   bottom: 0;
 } */
 
-img {
+/* img {
   background-position: center;
   background-size:cover;
   border-radius: 50%;
   
-}
+} */
 
 
 
