@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include("../functions.php");
 $pdo = connect_to_db();
@@ -49,8 +48,6 @@ if ($status == false) {
     foreach ($image_data as $record);
     $date = $record['created_at'];
 
-    // var_dump($date);
-
     // var_dump("created_atの日付" . $date);
     // var_dump("前回の日曜日" . $limit);
 
@@ -77,17 +74,6 @@ if ($status == false) {
   exit();
 } else {
   $pets_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-  // $output = "";
-  // foreach ($pets_data as $record) {
-  //   $output .= "<tr>";
-  //   $output .= "<td>{$record["p_name"]}</td>";
-  //   $output .= "<td>
-  //   <a href='../pet/pet.php?p_id={$record["p_id"]}'><img src='{$record["p_image"]}' width='100' height='100'></a>
-  //               </td>";
-  //   $output .= "</tr>";
-  // }
-  unset($value);
 }
 
 $sql = 'SELECT * FROM image_table WHERE u_id=:u_id';
@@ -102,12 +88,6 @@ if ($status == false) {
   exit();
 } else {
     $image_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    // $past = "";
-    // foreach ($image_data as $record) {
-    //     $past .= "<tr>";
-    //     $past .= "<td><a href='../pet/pet_detail.php?i_id={$record['i_id']}'><img src='{$record['image']}' height='100px' alt=''></a></td>";
-    //     $past .= "</tr>";
-    // }
 }
 
 
@@ -126,6 +106,7 @@ if ($status == false) {
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
 </head>
+<!-- マスクのスタイル -->
 <style>
   .mask {
   background: rgba(0, 0, 0, 0.5);
@@ -141,9 +122,11 @@ if ($status == false) {
   }
 </style>
 <body>
+  <!-- マスク -->
 <div id="mask" class="mask none"></div>
+  <!-- ヘッダー --> 
   <div style="height: 80px;">
-    <header class="container-fluid bg-primary d-flex align-items-center justify-content-betwee fixed-top">
+    <header class="container-fluid d-flex align-items-center justify-content-betwee fixed-top" style="background: #213a70; color:white">
       <div class="row h-85">
         <div class="col-2 p-0">
           <img src="../oniku.png" alt="ハンバーガーメニュー" class="img-fluid" onclick={openMenue()}>
@@ -155,33 +138,32 @@ if ($status == false) {
       </div>
     </header>
     <!-- ハンバーガーメニュー -->
-    <div id="menue" style="z-index:10; height: 250px; width:170px; background:pink; position:fixed; top:70px; left:10px; display:none">
+    <div id="menue" class="rounded" style="z-index:10; height: 225px; width:180px; background:#F5E2DB; position:fixed; top:70px; left:10px; display:none;">
       <div class="m-3">
-        <a href="../other/account.php">アカウント情報</a>
+        <a style="color: #934497;" href="../other/account.php">アカウント情報</a>
       </div>
       <div>
       </div>
       <div class="m-3">
-        <a href="../other/advice.php">飼育方法アドバイス</a>
+        <a style="color: pink;" href="../other/advice.php">飼育方法アドバイス</a>
       </div>
       <div class="m-3">
-        <a href="../multi/multi.php">新しい家族を追加</a>
+        <a style="color: gray;" href="../multi/multi.php">新しい家族を追加</a>
       </div>
       <div class="m-3">
-        <a href="../other/contact.php">お問い合わせ</a>
+        <a style="color: orange;" href="../other/contact.php">お問い合わせ</a>
       </div>
       <div class="m-3">
-        <a href="../other/logout.php">ログアウト</a>
+        <a style="color: white" href="../other/logout.php">ログアウト</a>
       </div>
     </div>
   </div>
-
   <!-- ヘッダーend -->
 
   <!-- メイン -->
     <main>
     <!-- <p><?= $user_data['u_name'] ?>さん！こんにちは</p> -->
-    <!--　マイペット一覧　output -->
+    <!-- マイペット一覧 -->
   <div class="container-fluid">
     <div class="row justify-content-center text-center my-2"> 
       <?php foreach ($pets_data as $record): ?>
@@ -192,14 +174,11 @@ if ($status == false) {
           <p class="m-0"><?= $record["p_name"] ?></p>
       </div>
       <?php endforeach ?>
-      
-      <!-- <div class="col-4 my-2">
-        <img class="rounded-circle" src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" width="70px" >
-      </div> -->
-    
     </div>
   </div>
+<!-- マイペット一覧 end -->
 
+<!-- 投稿写真一覧 -->
   <div class="container-fluid">
     <div class="row">
     <?php foreach ($image_data as $record): ?>
@@ -207,55 +186,13 @@ if ($status == false) {
         <img class="img-fluid" style="width: 100px; height:100px" src=<?= $record['image'] ?>>
       </div>
     <?php endforeach ?>
-      <!-- <div class="col-3 p-0">
-        <img src="../upload/20210831114254b8b178582dc357af581d064142f58bf6.png" alt="まだ" class="img-fluid" >
-      </div> -->
     </div>
   </div>
-
-
-
-  <!-- 
-    <table>
-      <tbody>
-        <?= $output ?>
-      </tbody>
-      <tbody>
-        <?= $past ?>
-      </tbody>
-    </table> -->
-
-    <!-- 写真一覧　past -->
-
-
-
-
-
-  <!-- メニュー一覧 -->
-    <!-- <div>
-      <a href="../other/account.php">アカウント情報</a>
-    </div>
-    <div>
-
-    </div>
-    <div>
-      <a href="../other/advice.php">飼育方法アドバイス</a>
-    </div>
-    <div>
-      <a href="../multi/multi.php">新しい家族を追加</a>
-    </div>
-    <div>
-      <a href="../other/contact.php">お問い合わせ</a>
-    </div>
-    <div>
-      <a href="../other/logout.php">ログアウト</a>
-    </div> -->
+  <!-- 投稿写真一覧 end -->
     </main>
-    <!-- ヘッダー -->
 
-  
-    <footer class="container-fluid text-center fixed-bottom bg-white">
-      <div class="row bg-primary">
+    <footer class="container-fluid text-center fixed-bottom bg-white text-white">
+      <div class="row" style="background: #213a70;">
         <div class="d-flex justify-content-between">
           <p class="m-0">利用規約</p>
           <p class="m-0">お問い合わせ</p>
@@ -273,7 +210,7 @@ if ($status == false) {
         </svg>
         </div>
       </div>
-      <p class="m-0">&copy; someday it will disappear company.</p> 
+      <p class="m-0 text-black">&copy; someday it will disappear company.</p> 
     </footer>
 
 </body>
