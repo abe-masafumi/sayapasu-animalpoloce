@@ -150,7 +150,7 @@ if ($status == false) {
   <div class="row justify-content-center text-center"> 
     <?php foreach ($pets_data as $record): ?>
     <div class="col-4 my-2">
-      <img class="rounded-circle" src=<?= $record["p_image"] ?> alt="まだ" width="70px" >
+        <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src=<?= $record["p_image"] ?> alt="まだ">
     </div>
     <?php endforeach ?>
     
@@ -165,7 +165,7 @@ if ($status == false) {
   <div class="row">
   <?php foreach ($image_data as $record): ?>
     <div class="col-3 p-0">
-      <img src=<?= $record['image'] ?> alt="まだ" class="img-fluid" >
+      <img class="img-fluid" style="width: 100px; height:100px" src=<?= $record['image'] ?> alt="まだ">
     </div>
   <?php endforeach ?>
     <!-- <div class="col-3 p-0">
