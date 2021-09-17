@@ -144,13 +144,14 @@ if ($status == false) {
 <!-- メイン -->
   <main>
   <!-- <p><?= $user_data['u_name'] ?>さん！こんにちは</p> -->
-
   <!--　マイペット一覧　output -->
 <div class="container-fluid">
   <div class="row justify-content-center text-center"> 
     <?php foreach ($pets_data as $record): ?>
     <div class="col-4 my-2">
+        <a href="../pet/pet.php?p_id=<?= $record["p_id"] ?>">
         <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src=<?= $record["p_image"] ?> alt="まだ">
+        </a>
     </div>
     <?php endforeach ?>
     
