@@ -25,4 +25,8 @@ class="container bg-primary d-flex align-items-center"
 # justify-content
 > リンク:https://getbootstrap.jp/docs/4.2/utilities/flex/
 
+# background
+> リンク:https://getbootstrap.jp/docs/4.1/utilities/colors/
 
+# font
+> https://getbootstrap.jp/docs/5.0/utilities/text/
