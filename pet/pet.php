@@ -52,6 +52,10 @@ if ($status == false) {
   <title>ペット個別情報</title>
    <!-- bootstrap icon CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+<!-- bootstrap-icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 </head>
 
 <link rel="stylesheet" type="text/css" href="../style.css">
@@ -110,16 +114,17 @@ if ($status == false) {
   <!-- ヘッダーend -->
 
   <main class="m-auto" style="width: 80%">
-    <div class="text-center">
+    <div class="text-center my-3">
       <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src="<?= $pet_data['p_image'] ?>" alt="" height="80" width="80">
     </div>
-    <div class="d-flex">
-      <div>
-        <table>
+    
+    <div class="container">
+      <div class="row">
+        <table class="col-8">
           <tbody>
             <tr>
-              <td>名前</td>
-              <td>:</td>
+              <!-- <td>名前</td>
+              <td>:</td> -->
               <td><?= $pet_data['p_name'] ?></td>
             </tr>
             <tr>
@@ -139,15 +144,22 @@ if ($status == false) {
             </tr>
           </tbody>
         </table>
-      </div>
-      <div>
-        <form action="pet_edit.php" method="POST">
-          <div><a href="pet_up.php?p_id=<?= $p_id ?>">投稿</a></div>
-          <input type="hidden" name="p_id" value="<?= $pet_data['p_id'] ?>">
-          <button class="btn btn-primary" type="submit">編集</button>
-        </form>
+        
+        <div class="col-4 p-0 text-center">
+          <!-- ここ気になる　aタグはformの中にいなくていい -->
+          <!-- button　submitもhiddenだけ送るならsessionでいい気がする -->
+          <form action="pet_edit.php" method="POST">
+            <a class="m-2 btn btn-secondary w-100 text-white d-flex align-items-center justify-content-center" style="height: 50px;" href="pet_up.php?p_id=<?= $p_id ?>">
+            投稿
+            <i class="bi bi-camera"></i>
+            </a>
+            <input type="hidden" name="p_id" value="<?= $pet_data['p_id'] ?>">
+            <button class="m-2 btn btn-primary w-100" type="submit">編集</button>
+          </form>
+        </div>
       </div>
     </div>
+
 <!-- <a href='pet_detail.php?i_id={$record['i_id']}'><img src='{$record['image']}' height='100px' alt=''> -->
     <!-- <p>↓過去写真一覧を並べる↓</p> -->
 <div class="container-fluid">
