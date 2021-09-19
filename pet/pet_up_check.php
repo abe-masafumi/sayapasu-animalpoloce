@@ -51,6 +51,7 @@ if (isset($_FILES['upfile']) && $_FILES['upfile']['error'] == 0) {
       <img class="img-fluid mx-auto my-4 rounded-circle" style="width: 90px; height:90px" src="<?= $pet_data['p_image'] ?>" alt="" height="80" width="80">
     </div>
     <!-- トリミング情報 -->
+    <form action="pet_up_comment.php" method="POST">
     <div class="text-center"> 
       <p>このトリミングでよろしいですか？</p>
       <img src="<?= $filename_to_save ?>" alt="" width="300" height="300">
@@ -61,6 +62,7 @@ if (isset($_FILES['upfile']) && $_FILES['upfile']['error'] == 0) {
       <a class="m-5 btn btn-primary text-white w-50" href="pet_up.php?p_id=<?= $_POST['p_id'] ?>">撮り直す</a>
       <button class="m-5 btn btn-primary text-white w-50" type="submit">OK</button>
     </div>
+    </form>
 
 </main>
 
