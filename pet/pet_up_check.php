@@ -37,15 +37,34 @@ if (isset($_FILES['upfile']) && $_FILES['upfile']['error'] == 0) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>写真確認</title>
+   <!-- bootstrap icon CSS only -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="../style.css">
 
 </head>
 <body>
 
-<main></main>
+<main>
+    <!-- ペットのアイコン -->
+    <div class="text-center my-3">
+      <img class="img-fluid mx-auto my-4 rounded-circle" style="width: 90px; height:90px" src="<?= $pet_data['p_image'] ?>" alt="" height="80" width="80">
+    </div>
+    <!-- トリミング情報 -->
+    <div class="text-center"> 
+      <p>このトリミングでよろしいですか？</p>
+      <img src="<?= $filename_to_save ?>" alt="" width="300" height="300">
+      <input type="hidden" name="image" value="<?= $filename_to_save ?>">
+      <input type="hidden" name="p_id" value="<?= $_POST['p_id'] ?>">
+    </div>
+    <div class="d-flex justify-content-center">
+      <a class="m-5 btn btn-primary text-white w-50" href="pet_up.php?p_id=<?= $_POST['p_id'] ?>">撮り直す</a>
+      <button class="m-5 btn btn-primary text-white w-50" type="submit">OK</button>
+    </div>
 
-<form action="pet_up_comment.php" method="POST">
+</main>
+
+<!-- <form action="pet_up_comment.php" method="POST">
 <p>このトリミングでよろしいですか？</p>
 <img src="<?= $filename_to_save ?>" alt="" width="100" height="100">
 <input type="hidden" name="image" value="<?= $filename_to_save ?>">
@@ -58,7 +77,7 @@ if (isset($_FILES['upfile']) && $_FILES['upfile']['error'] == 0) {
 <div>
   
 </div>
-</form>
+</form> -->
 
 <footer></footer>
 

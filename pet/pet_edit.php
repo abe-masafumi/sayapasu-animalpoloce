@@ -46,21 +46,21 @@ $sql = 'SELECT * FROM pet_table WHERE p_id=:p_id';
       <p class="my-1"><?= $pet_data['p_name'] ?></p>
       </div>
       <p class="text-danger text-center">※変更できるのはアイコンと名前のみです</p>
-
-      <div class="text-center">
-        <input type="file" name="upfile" accept="image/*"capture="camera">
-        <p class="m-0">--サンプル--</p>
-        <div class="bg-primary w-50 mx-auto my-2">
-          <img src="../taion.png" class="" style="height: 150px;">
+      <!-- 入力フォーム -->
+      <form action="pet_update.php" method="POST" enctype="multipart/form-data">
+        <div class="text-center">
+          <input type="file" name="upfile" accept="image/*"capture="camera">
+          <p class="m-0">--サンプル--</p>
+          <div class="bg-primary w-50 mx-auto my-2">
+            <img src="../taion.png" class="" style="height: 150px;">
+          </div>
+          <div class="w-50 mx-auto my-5">
+            <p class="w-50 m-0">新しい名前</p>
+            <input class="" type="text" name="p_name" value="<?= $pet_data['p_name'] ?>">
+          </div>
+          <button class="btn btn-primary" type="submit">変更する</button>
         </div>
-        <div class="w-50 mx-auto my-5">
-          <p class="w-50 m-0">新しい名前</p>
-          <input class="" type="text" name="p_name" value="<?= $pet_data['p_name'] ?>">
-        </div>
-
-        <button class="btn btn-primary" type="submit">変更する</button>
-      </div>
-      
+      </form>
 
 
       
