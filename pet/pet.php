@@ -118,7 +118,7 @@ if ($status == false) {
       <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src="<?= $pet_data['p_image'] ?>" alt="" height="80" width="80">
     </div>
     
-    <div class="container">
+    <div class="container my-2">
       <div class="row">
         <table class="col-8">
           <tbody>
@@ -149,9 +149,9 @@ if ($status == false) {
           <!-- ここ気になる　aタグはformの中にいなくていい -->
           <!-- button　submitもhiddenだけ送るならsessionでいい気がする -->
           <form action="pet_edit.php" method="POST">
-            <a class="m-2 btn btn-secondary w-100 text-white d-flex align-items-center justify-content-center" style="height: 50px;" href="pet_up.php?p_id=<?= $p_id ?>">
-            投稿
-            <i class="bi bi-camera"></i>
+            <a class="m-2 p-0 btn btn-secondary w-100 text-white d-flex align-items-center justify-content-center" style="height: 50px;" href="pet_up.php?p_id=<?= $p_id ?>">
+            <p class="h3 m-0 px-1">投稿</p>
+            <i class="m-0 h1 bi bi-camera"></i>
             </a>
             <input type="hidden" name="p_id" value="<?= $pet_data['p_id'] ?>">
             <button class="m-2 btn btn-primary w-100" type="submit">編集</button>
