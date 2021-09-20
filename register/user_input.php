@@ -16,6 +16,9 @@
 <body>
   <!-- <h2>ユーザー情報登録</h2> -->
 
+
+  
+
   <div class="m-auto" style="width: 80%">
     <form action="pet_input.php?s_id=<?= $_GET['s_id'] ?>" method="POST">
       <div>

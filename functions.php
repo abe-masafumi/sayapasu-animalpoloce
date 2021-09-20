@@ -26,7 +26,3 @@ function check_session_id()
     $_SESSION["session_id"] = session_id();
   }
 }
-
-// ヘッダーの写真も勝手にここで管理！てへ
-// 写真が決まったら消しても良い
-$pic = "../taion.png";

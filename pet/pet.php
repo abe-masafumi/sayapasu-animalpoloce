@@ -86,7 +86,7 @@ if ($status == false) {
         </div>
         <div class="col-8 d-flex d-flex align-items-center">今週の写真がありませーん</div>
         <div class="col-2 p-0">
-          <img src=<?= $pic  ?> alt="ハンバーガーメニュー" class="img-fluid">
+          <img src="../taion.png" alt="ハンバーガーメニュー" class="img-fluid">
         </div>
       </div>
     </header>
