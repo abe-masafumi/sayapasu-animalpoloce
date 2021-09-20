@@ -36,7 +36,6 @@ if ($_SESSION["session_id"] != session_id()) {
     $stmt->bindValue(':address', $address, PDO::PARAM_STR);
     $stmt->bindValue(':phone', $phone, PDO::PARAM_INT);
     $status = $stmt->execute();
-   
     
     if ($status == false) {
         $error = $stmt->errorInfo();
