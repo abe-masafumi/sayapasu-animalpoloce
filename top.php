@@ -39,7 +39,7 @@
     <header class="container-fluid d-flex align-items-center justify-content-betwee fixed-top" style="background: #213a70; color:white">
       <div class="row h-85">
         <div class="col-2 p-0">
-          <img src="./oniku.png" alt="ハンバーガーメニュー" class="img-fluid" onclick={openMenue()}>
+          <img src="./肉球白.png" alt="ハンバーガーメニュー" class="img-fluid" onclick={openMenue()}>
         </div>
         <div class="col-8 d-flex d-flex align-items-center">今週の写真がありませーん</div>
         <div class="col-2 p-0">
@@ -72,13 +72,13 @@
 <main class="d-flex align-items-center justify-content-center" style="height: 600px;">
     <div class="align-items-center justify-content-center d-inline-block w-50">
       <div class="my-5">
-        <a class="btn btn-primary stretched-link w-100" href="register/terms.php?s_id=<?= $_GET['s_id'] ?>">
+        <a class="btn btn-primary w-100" href="register/terms.php?s_id=<?= $_GET['s_id'] ?>">
         新規登録
         </a>
       </div>
       <div style="height:10px"></div>
         <div class="my-5">
-          <a class="btn btn-primary stretched-link w-100" href="login/login.php?s_id=<?= $_GET['s_id'] ?>">
+          <a class="btn btn-primary w-100" href="login/login.php?s_id=<?= $_GET['s_id'] ?>">
           ログイン
           </a>
       </div>

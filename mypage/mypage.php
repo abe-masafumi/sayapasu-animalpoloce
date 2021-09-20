@@ -131,7 +131,7 @@ if ($status == false) {
     <header class="container-fluid d-flex align-items-center justify-content-betwee fixed-top" style="background: #213a70; color:white">
       <div class="row h-85">
         <div class="col-2 p-0">
-          <img src="../oniku.png" alt="ハンバーガーメニュー" class="img-fluid" onclick={openMenue()}>
+          <img src="../肉球白.png" alt="ハンバーガーメニュー" class="img-fluid" onclick={openMenue()}>
         </div>
         <div class="col-8 d-flex d-flex align-items-center">今週の写真がありませーん</div>
         <div class="col-2 p-0">

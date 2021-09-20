@@ -42,7 +42,7 @@ $sql = 'SELECT * FROM pet_table WHERE p_id=:p_id';
 
       <!-- <h2>ペット情報編集</h2> -->
       <div class="text-center my-3">
-      <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src="<?= $pet_data['p_image'] ?>" alt="" height="80" width="80">
+      <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src=<?= $pet_data['p_image'] ?> alt="" height="80" width="80">
       <p class="my-1"><?= $pet_data['p_name'] ?></p>
       </div>
       <p class="text-danger text-center">※変更できるのはアイコンと名前のみです</p>
@@ -56,8 +56,9 @@ $sql = 'SELECT * FROM pet_table WHERE p_id=:p_id';
           </div>
           <div class="w-50 mx-auto my-5">
             <p class="w-50 m-0">新しい名前</p>
-            <input class="" type="text" name="p_name" value="<?= $pet_data['p_name'] ?>">
+            <input type="text" name="p_name" value="<?= $pet_data['p_name'] ?>">
           </div>
+          <input type="hidden" name="p_id" value="<?= $pet_data['p_id'] ?>">
           <button class="btn btn-primary" type="submit">変更する</button>
         </div>
       </form>
