@@ -38,20 +38,29 @@
 </style> -->
 
 <body class="">
+<!-- ヘッダー --> 
+<div style="height: 80px;">
+    <header class="container-fluid d-flex align-items-center justify-content-betwee fixed-top" style="background: #213a70; color:white">
+      <div class="row h-85">
+        <div class="col-2 p-0">
+         
+        </div>
+        <div class="col-8 d-flex d-flex align-items-center"></div>
+        <div class="col-2 p-0">
+          <img src="../taion.png" alt="" class="img-fluid">
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- ヘッダーend -->
 
   <main>
-
-
-
-
-
-  </main>
   <!-- <h1>利用規約</h1> -->
   <!-- <p class="desc">
     以下の内容を全てお読み頂き、同意頂ける場合のみ会員登録へお進み下さい。
   </p> -->
   <div class>
-    <p class="text-center">お申し込みに関する利用規約</p>
+    <p class="text-center m-0">お申し込みに関する利用規約</p>
     <div class="m-auto border border-secondary" style="overflow-y: scroll; height:500px; width:85%" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" tabindex="0">
       <strong>第１条</strong><br>
       このアプリに登録した者（以下、会員）は、毎週月曜日〜日曜日の間に該当するペットの写真を投稿する義務を負います。該当するペットとはこのアプリに登録した犬や猫を指します。登録しているペットが複数になった場合は、全てのペットの写真を週に１回投稿してください。<br>
@@ -69,12 +78,20 @@
     </div>
   </div>
 
-  <div class="text-center">
+  <div class="text-center my-4">
     <form action="user_input.php?s_id=<?= $_GET['s_id'] ?>" method="POST" class="">
      <p><label class=""><input type="checkbox" name="agreed" value="OK" id="agree" disabled> 利用規約に同意します</label></p>
       <button class="btn btn-primary" id="next" type="submit" disabled>ユーザー登録へ</button>
     </form>
   </div>
+  </main>
+
+  <footer class="p-0 container-fluid text-center fixed-bottom bg-white">
+      <hr class="my-2" style="border:2px solid #213a70">
+      <p class="mb-2 text-black">&copy; someday it will disappear company.</p> 
+    </footer>
+
+
   <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 
   <script>

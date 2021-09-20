@@ -1,5 +1,6 @@
 <?php
 include("../functions.php");
+
 $pdo = connect_to_db();
 session_start();
 
@@ -15,9 +16,18 @@ if ($_SESSION["session_id"] != session_id()) {
     $sex = $_POST['sex'];
     $type = $_POST['type'];
     $filename_to_save = $_POST['p_image'];
+    // var_dump($u_name);
+    // var_dump($email);
+    // var_dump($password);
+    // var_dump($address);
+    // var_dump($phone);
+    // var_dump($s_id);
+    // var_dump($sex);
+    // var_dump($type);
+    // var_dump($filename_to_save);
 
 
-    $sql = 'INSERT INTO users_table (u_id, u_name, email, password, address, phone, created_at, updated_at, deleted_at) VALUES (NULL, :u_name, :email, :password, :address, :phone, sysdate(), sysdate(), sysdate())';
+    $sql = 'INSERT INTO users_table (u_name, email, password, address, phone, created_at, updated_at, deleted_at) VALUES (:u_name, :email, :password, :address, :phone, sysdate(), sysdate(), sysdate())';
 
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':u_name', $u_name, PDO::PARAM_STR);
