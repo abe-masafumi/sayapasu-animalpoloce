@@ -2,7 +2,6 @@
 include("../functions.php");
 $pdo = connect_to_db();
 session_start();
-
 if ($_SESSION["session_id"] != session_id()) {
   $u_name = $_POST['u_name'];
   $email = $_POST['email'];
@@ -155,11 +154,25 @@ if ($_SESSION["session_id"] != session_id()) {
 </head>
 
 <body>
+    <!-- ヘッダー -->
+    <div style="height: 80px;">
+    <header class="container-fluid d-flex align-items-center justify-content-betwee fixed-top" style="background: #213a70; color:white">
+      <div class="row h-85">
+        <div class="col-2 p-0">
+        </div>
+        <div class="col-8 d-flex d-flex align-items-center"></div>
+        <div class="col-2 p-0">
+          <img src="../taion.png" alt="" class="img-fluid">
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- ヘッダーend -->
 
-  <main class="m-auto" style="width: 80%;">
-  <table class="rounded" style="background: pink; border-radius: 8px">
+  <main class="mx-auto my-2"  style="width: 80%">
+    <p>お客様情報</p>
+    <table class="w-100 mb-3" style="background: #fefaec; border:10px solid #fefaec">
     <tbody>
-      <h2>お客様情報</h2>
       <tr>
         <td>お名前</td>
         <td>:</td>
@@ -182,8 +195,9 @@ if ($_SESSION["session_id"] != session_id()) {
       </tr>
     </tbody>
   </table>
-  <h2>ペット情報</h2>
-  <table  class="rounded" style="background: pink; border-radius: 8px">
+
+  <p>ペット情報</p>
+  <table  class="w-100 mb-3" style="background: #fefaec; border:10px solid #fefaec">
     <tbody>
       <tr>
         <td>購入店舗</td>
@@ -211,16 +225,16 @@ if ($_SESSION["session_id"] != session_id()) {
         <td><?= $birthday ?></td>
       </tr>
       <tr>
-        <td>写真</td>
-        <td>:</td>
+        <td class="align-top">写真</td>
+        <td class="align-top">:</td>
         <td> <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src="<?= $filename_to_save ?>" alt="" height="160px"></td>
       </tr>
     </tbody>
   </table>
 
   <div class="text-center">
-    <div>
-      <p class="m-0"><?= $store_data['store_name'] ?>様が<br>承認ボタンを押して下さい</p>
+    <div class="my-2">
+      <p class="m-0 text-danger"><?= $store_data['store_name'] ?>様が<br>ボタンを押して下さい</p>
     </div>
     <form action="user_create.php" method="POST">
       <input type="hidden" name="u_name" value="<?= $u_name ?>">
@@ -234,14 +248,18 @@ if ($_SESSION["session_id"] != session_id()) {
       <input type="hidden" name="sex" value="<?= $sex ?>">
       <input type="hidden" name="type" value="<?= $type ?>">
       <input type="hidden" name="p_image" value="<?= $filename_to_save ?>">
-      <button class="btn btn-primary" type="submit">承認します</button>
+      <button class="btn btn-danger w-50" type="submit">承認します</button>
     </form>
+    <button class="btn btn-primary w-50 my-3" type="submit">修正する</button>
     
   </div>
   <!-- POSTでデータ持って帰って前に戻るボタンを作る -->
   </main>
  
-  <footer></footer>
+  <footer class="p-0 container-fluid text-center fixed-bottom bg-white">
+      <hr class="my-2" style="border:2px solid #213a70">
+      <p class="mb-2 text-black">&copy; someday it will disappear company.</p> 
+    </footer>
 
 </body>
 

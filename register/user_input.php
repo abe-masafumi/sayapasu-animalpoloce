@@ -12,55 +12,21 @@
     <!-- boootstrapのパッケージ -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
-<style>
-  .mask {
-  background: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: 5;
-  }
-  .none {
-    display: none;
-  }
-</style>
 <body>
-<div id="mask" class="mask none"></div>
+
   <!-- <h2>ユーザー情報登録</h2> -->
+  <!-- ヘッダー -->
   <div style="height: 80px;">
     <header class="container-fluid d-flex align-items-center justify-content-betwee fixed-top" style="background: #213a70; color:white">
       <div class="row h-85">
         <div class="col-2 p-0">
-          <img src="../肉球白.png" alt="ハンバーガーメニュー" class="img-fluid" onclick={openMenue()}>
         </div>
-        <div class="col-8 d-flex d-flex align-items-center">今週の写真がありませーん</div>
+        <div class="col-8 d-flex d-flex align-items-center"></div>
         <div class="col-2 p-0">
           <img src="../taion.png" alt="" class="img-fluid">
         </div>
       </div>
     </header>
-    <!-- ハンバーガーメニュー -->
-    <div id="menue" class="rounded" style="z-index:10; height: 225px; width:180px; background:#F5E2DB; position:fixed; top:70px; left:10px; display:none;">
-      <div class="m-3">
-        <a style="color: #934497;" href="../other/account.php">アカウント情報</a>
-      </div>
-      <div>
-      </div>
-      <div class="m-3">
-        <a style="color: pink;" href="../other/advice.php">飼育方法アドバイス</a>
-      </div>
-      <div class="m-3">
-        <a style="color: gray;" href="../multi/multi.php">新しい家族を追加</a>
-      </div>
-      <div class="m-3">
-        <a style="color: orange;" href="../other/contact.php">お問い合わせ</a>
-      </div>
-      <div class="m-3">
-        <a style="color: white" href="../other/logout.php">ログアウト</a>
-      </div>
-    </div>
   </div>
   <!-- ヘッダーend -->
 
@@ -68,7 +34,7 @@
 
   <main>
     <div class="mx-auto" style="width: 80%">
-      <form action="pet_input.php?s_id=<?= $_GET['s_id'] ?>" method="POST">
+      <form action="pet_input.php?s_id=<?= $_GET['s_id'] ?>" method="POST" autocomplete="off">
         <div class="my-4">
           <p class="m-0">お名前</p>
           <input class="w-100" type="text" name="u_name">
@@ -161,7 +127,7 @@
         <div class="my-4">
           <p class="m-0">電話番号</p>
           <div class="d-flex justify-content-around">
-            <input type="text" name="phone1" size="8" maxlength="4"> - <input type="text" name="phone2" size="8" maxlength="4"> - <input type="text" name="phone3" size="8" maxlength="4">
+            <input type="text" name="phone1" size="8" maxlength="3"> - <input type="text" name="phone2" size="8" maxlength="4"> - <input type="text" name="phone3" size="8" maxlength="4">
           </div>
         </div>
         <div class="my-4">
@@ -183,22 +149,7 @@
       <hr class="my-2" style="border:2px solid #213a70">
       <p class="mb-2 text-black">&copy; someday it will disappear company.</p> 
     </footer>
-  <script>
-  const mask = document.getElementById('mask');
-  function openMenue() {
-    const menue = document.getElementById('menue');
-      if (menue.style.display == "none") {
-        menue.style.display = "inline-block"
-        mask.classList.remove("none");
-        } else {
-        menue.style.display = "none";
-        mask.classList.add('none');
-        } 
-      };
-  mask.addEventListener('click', () => {
-    openMenue();
-  });
-</script>
+
 </body>
 
 </html>

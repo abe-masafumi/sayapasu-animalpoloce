@@ -1,8 +1,8 @@
 <?php
 include("../functions.php");
-
 $pdo = connect_to_db();
 session_start();
+check_session_id();
 
 if ($_SESSION["session_id"] != session_id()) {
     $u_name = $_POST['u_name'];
@@ -16,16 +16,6 @@ if ($_SESSION["session_id"] != session_id()) {
     $sex = $_POST['sex'];
     $type = $_POST['type'];
     $filename_to_save = $_POST['p_image'];
-    // var_dump($u_name);
-    // var_dump($email);
-    // var_dump($password);
-    // var_dump($address);
-    // var_dump($phone);
-    // var_dump($s_id);
-    // var_dump($sex);
-    // var_dump($type);
-    // var_dump($filename_to_save);
-
 
     $sql = 'INSERT INTO users_table (u_name, email, password, address, phone, created_at, updated_at, deleted_at) VALUES (:u_name, :email, :password, :address, :phone, sysdate(), sysdate(), sysdate())';
 
@@ -36,7 +26,6 @@ if ($_SESSION["session_id"] != session_id()) {
     $stmt->bindValue(':address', $address, PDO::PARAM_STR);
     $stmt->bindValue(':phone', $phone, PDO::PARAM_INT);
     $status = $stmt->execute();
-    
     if ($status == false) {
         $error = $stmt->errorInfo();
         echo json_encode(["error_msg" => "{$error[2]}"]);
