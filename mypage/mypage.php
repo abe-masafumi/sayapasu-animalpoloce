@@ -185,7 +185,9 @@ if ($status == false) {
     <div class="row">
     <?php foreach ($image_data as $record): ?>
       <div class="col-3 p-0">
+      <a href="../pet/pet_detail.php?i_id={$record['i_id']}">
         <img class="img-fluid" style="width: 100px; height:100px" src=<?= $record['image'] ?>>
+      </a>
       </div>
     <?php endforeach ?>
     </div>
@@ -210,7 +212,6 @@ if ($status == false) {
       <p class="m-0 text-black">&copy; someday it will disappear company.</p> 
     </footer>
 
-</body>
 <script>
   const mask = document.getElementById('mask');
   function openMenue() {
@@ -227,5 +228,7 @@ if ($status == false) {
     openMenue();
   });
 </script>
+</body>
+
 
 </html>
