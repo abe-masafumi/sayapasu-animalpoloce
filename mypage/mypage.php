@@ -210,7 +210,6 @@ if ($status == false) {
       <p class="m-0 text-black">&copy; someday it will disappear company.</p> 
     </footer>
 
-</body>
 <script>
   const mask = document.getElementById('mask');
   function openMenue() {
@@ -227,5 +226,7 @@ if ($status == false) {
     openMenue();
   });
 </script>
+</body>
+
 
 </html>
