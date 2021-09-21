@@ -2,7 +2,7 @@
 include("../functions.php");
 $pdo = connect_to_db();
 session_start();
-
+var_dump(session_id());
 if ($_SESSION["session_id"] != session_id()) {
   $u_name = $_POST['u_name'];
   $email = $_POST['email'];
