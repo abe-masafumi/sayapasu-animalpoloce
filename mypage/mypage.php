@@ -185,7 +185,9 @@ if ($status == false) {
     <div class="row">
     <?php foreach ($image_data as $record): ?>
       <div class="col-3 p-0">
+      <a href="../pet/pet_detail.php?i_id={$record['i_id']}">
         <img class="img-fluid" style="width: 100px; height:100px" src=<?= $record['image'] ?>>
+      </a>
       </div>
     <?php endforeach ?>
     </div>
