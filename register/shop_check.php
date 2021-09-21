@@ -169,9 +169,9 @@ if ($_SESSION["session_id"] != session_id()) {
   </div>
   <!-- ヘッダーend -->
 
-  <main class="mx-auto my-3"  style="width: 80%">
+  <main class="mx-auto my-2"  style="width: 80%">
     <p>お客様情報</p>
-    <table class="rounded w-100 mb-5" style="background: pink; border-radius: 8px">
+    <table class="w-100 mb-3" style="background: #fefaec; border:10px solid #fefaec">
     <tbody>
       <tr>
         <td>お名前</td>
@@ -197,7 +197,7 @@ if ($_SESSION["session_id"] != session_id()) {
   </table>
 
   <p>ペット情報</p>
-  <table  class="rounded w-100 mb-4" style="background: pink; border-radius: 8px">
+  <table  class="w-100 mb-3" style="background: #fefaec; border:10px solid #fefaec">
     <tbody>
       <tr>
         <td>購入店舗</td>
@@ -225,8 +225,8 @@ if ($_SESSION["session_id"] != session_id()) {
         <td><?= $birthday ?></td>
       </tr>
       <tr>
-        <td>写真</td>
-        <td>:</td>
+        <td class="align-top">写真</td>
+        <td class="align-top">:</td>
         <td> <img class="img-fluid m-auto rounded-circle" style="width: 90px; height:90px" src="<?= $filename_to_save ?>" alt="" height="160px"></td>
       </tr>
     </tbody>
@@ -248,7 +248,7 @@ if ($_SESSION["session_id"] != session_id()) {
       <input type="hidden" name="sex" value="<?= $sex ?>">
       <input type="hidden" name="type" value="<?= $type ?>">
       <input type="hidden" name="p_image" value="<?= $filename_to_save ?>">
-      <button class="btn btn-primary w-50" type="submit">承認します</button>
+      <button class="btn btn-danger w-50" type="submit">承認します</button>
     </form>
     <button class="btn btn-primary w-50 my-3" type="submit">修正する</button>
     
